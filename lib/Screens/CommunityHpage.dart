@@ -1,3 +1,6 @@
+import 'package:air_pollution/Screens/comm_posts_page.dart';
+import 'package:air_pollution/Screens/emergency_contact.dart';
+import 'package:air_pollution/Screens/weather_page.dart';
 import 'package:flutter/material.dart';
 
 import 'PostomePage.dart';
@@ -13,14 +16,18 @@ class CommunityHpage extends StatefulWidget {
 class _CommunityHpageState extends State<CommunityHpage> {
   int _selectpage = 0;
 
-  void _navigatorPage(int index ) {
+  void _navigatorPage(int index) {
     setState(() {
       _selectpage = index;
     });
   }
-  final List<Widget> Pages =[
-    PostomePage(),
-    AddPost(),
+
+  final List<Widget> Pages = [
+    WeatherPage(),
+    CommunityPosts(isAdmin: false),
+    EmergencyContact(
+      role1: "admin",
+    ),
   ];
 
   @override
@@ -31,9 +38,12 @@ class _CommunityHpageState extends State<CommunityHpage> {
           currentIndex: _selectpage,
           onTap: _navigatorPage,
           items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'home'),
-        BottomNavigationBarItem(icon: Icon(Icons.add_circle_outline), label: 'add'),
-      ]),
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'home'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.group), label: 'Community'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.emergency), label: 'Emergency'),
+          ]),
     );
   }
 }

@@ -7,6 +7,7 @@ import 'package:air_pollution/Screens/loginscreen.dart';
 import 'package:flutter/material.dart';
 
 import 'about.dart';
+import 'comm_posts_page.dart';
 
 class AdminScreen extends StatefulWidget {
   const AdminScreen({Key? key}) : super(key: key);
@@ -115,7 +116,7 @@ class _AdminScreenState extends State<AdminScreen> {
                       borderRadius: const BorderRadius.all(Radius.circular(30)),
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const CommunityHomePage()));
+                            builder: (context) =>  CommunityPosts(isAdmin: true,)));
                       },
                       child: Container(
                         height: 50,

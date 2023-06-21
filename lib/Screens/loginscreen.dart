@@ -1,4 +1,6 @@
+import 'package:air_pollution/Screens/CommunityHpage.dart';
 import 'package:air_pollution/Screens/admin_screen.dart';
+import 'package:air_pollution/Screens/communiy_homepage.dart';
 import 'package:air_pollution/Screens/users.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../Components/TextField/text_field.dart';
@@ -98,7 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
           email: emailIdController.text.trim(),
           password: passController.text.trim());
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => UsersList()));
+          context, MaterialPageRoute(builder: (context) => CommunityHpage()));
     }
   }
 
